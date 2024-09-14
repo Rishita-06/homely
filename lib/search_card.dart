@@ -62,7 +62,7 @@ class SearchCard extends StatelessWidget {
                               child: Text(
                                 name,
                                 style: const TextStyle(
-                                    color: Colors.black, fontSize: 15.0),
+                                    color: Colors.black, fontSize: 14.0),
                               ),
                             ),
                           ],
@@ -92,7 +92,7 @@ class SearchCard extends StatelessWidget {
                                 disease,
                                 style: const TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
+                                    fontSize: 18.0,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),

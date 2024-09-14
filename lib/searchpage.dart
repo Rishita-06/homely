@@ -55,7 +55,7 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Amit Singh',
+                  name: 'Amit',
                   age: '65',
                   disease: 'Diabetes',
                 ),
@@ -63,15 +63,15 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Priya Kumari',
+                  name: 'Priya',
                   age: '70',
-                  disease: 'Hypertension',
+                  disease: 'Hyper-\ntension',
                 ),
                 SearchCard(
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Rajesh Kumar',
+                  name: 'Rajesh',
                   age: '68',
                   disease: 'Asthma',
                 ),
@@ -79,7 +79,7 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Sunita Agarwal',
+                  name: 'Sunita',
                   age: '72',
                   disease: 'Cancer',
                 ),
@@ -87,15 +87,15 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Anil Kapoor',
+                  name: 'Anil',
                   age: '75',
-                  disease: 'Heart Disease',
+                  disease: 'Heart\nDisease',
                 ),
                 SearchCard(
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Rekha Singhal',
+                  name: 'Rekha',
                   age: '80',
                   disease: 'Arthritis',
                 ),
@@ -103,7 +103,7 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Vikram Ghotra',
+                  name: 'Vikram',
                   age: '74',
                   disease: 'Migraines',
                 ),
@@ -111,7 +111,7 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Neeta Gupta',
+                  name: 'Neeta',
                   age: '77',
                   disease: 'Stroke',
                 ),
@@ -119,7 +119,7 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Ravi Lakhanpal',
+                  name: 'Ravi',
                   age: '69',
                   disease: 'Epilepsy',
                 ),
@@ -127,9 +127,9 @@ class _SearchpageState extends State<Searchpage> {
                   ontap: () {
                     // Define action on tap here
                   },
-                  name: 'Suman Seth',
+                  name: 'Suman',
                   age: '73',
-                  disease: 'Multiple Sclerosis',
+                  disease: 'Multiple\nSclerosis',
                 ),
               ],
             ),
