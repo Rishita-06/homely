@@ -48,6 +48,7 @@ h1 {
 
   .dropdown {
     position: relative;
+    width: 150px;
   }
   
   .dropdownContent {
@@ -63,6 +64,7 @@ h1 {
   
   .dropdownContent a {
     display: block;
+    width: 115px;
     padding: 10px 16px;
     color: #1a2b49;
     font-size: 14px;
@@ -77,6 +79,10 @@ h1 {
   
   .dropdown:hover .dropdownContent {
     display: block;
+  }
+  
+  .dropbtn{
+    background-color: white;
   }
 
 .container {

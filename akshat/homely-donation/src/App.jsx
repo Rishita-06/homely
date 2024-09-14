@@ -8,10 +8,12 @@ import Marketplace from "./components/Marketplace";
 import Checkout from './components/Checkout';
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/home" element={<Home />} />
           <Route path="/donation" element={<Donation />} />
@@ -23,7 +25,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
