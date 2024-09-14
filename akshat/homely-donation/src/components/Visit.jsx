@@ -1,11 +1,42 @@
 import styles from './Visit.module.css';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Visit() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <>
-    
+      <nav className={styles.navbar}>
+        <div className={styles.navLeft}>
+          <h1>Homely</h1>
+        </div>
+        <div className={styles.navRight}>
+          <Link to="/contact" className={styles.navLink}>
+            Contact Us
+          </Link>
+          <Link to="/visit" className={styles.navLink}>
+            Request a Visit
+          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className={styles.navLink}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/signup" className={styles.navLink}>
+              Register
+            </Link>
+          )}
+        </div>
+      </nav>
+
+    <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h2>Request a visit to the Old Age Home</h2>
+        <h2>Request a Visit</h2>
         <form action="/submit_visit_request" method="post" className={styles.form}>
           
           <label className={styles.label} htmlFor="visitorName">Your Name:</label>
@@ -84,6 +115,7 @@ function Visit() {
           </button>
         </form>
       </div>
+    </div>
     </>
   );
 }

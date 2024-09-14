@@ -9,13 +9,20 @@
   
   .formContainer {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 50px auto; 
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
     border-radius: 10px;
-    background-color: #f9f9f9;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('../assets/gradient.png'); 
+    background-size: cover;
   }
+
+  .container {
+    background-image: url('../assets/old\ hands.jpg'); 
+    background-size: cover;
+}
   
   .form {
     display: flex;
@@ -25,6 +32,8 @@
   .label {
     margin-bottom: 10px;
     font-size: 16px;
+    color: #2c3e50; 
+    font-family: 'Georgia', serif; 
   }
   
   .input {
@@ -33,6 +42,8 @@
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #2c3e50;
   }
   
   .textarea {
@@ -42,6 +53,8 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     min-height: 100px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #2c3e50;
   }
   
   .button {
@@ -52,10 +65,54 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .button:hover {
     background-color: #E4F7FF;
   }
   
+  .navbar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
   
+  .navLeft {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #1a2b49;
+    font-weight: bold;
+  }
+  
+  .navRight {
+    display: flex;
+    gap: 30px;
+    padding-right: 30px;
+  }
+  
+  .navLink {
+    color: #1a2b49;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    background-color: #567df4;
+    color: #fff;
+  }
