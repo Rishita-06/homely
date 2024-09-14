@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Addpage extends StatelessWidget {
-  const Addpage({super.key});
+class Profilepage extends StatelessWidget {
+  const Profilepage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(228, 79, 13, 13),
+      color: Color.fromARGB(255, 204, 0, 255),
     );
   }
 }
