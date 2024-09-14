@@ -5,12 +5,15 @@ import Logo from "../assets/logo.png";
 
 function SignUp() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    homeName: "",
+    registrationNumber: "",
+    address: "",
+    contactNumber: "",
     email: "",
-    password: "",
-    confirmPassword: "",
-    dob: "",
-    gender: "male",
+    managementName: "",
+    managementPhone: "",
+    capacity: "",
+    services: "",
     agreed: false,
   });
 
@@ -31,57 +34,81 @@ function SignUp() {
     <div className={styles.container}>
       <div className={styles.form}>
         <img src={Logo} alt="Homely Logo" className={styles.img} />
-        <h2>Sign Up</h2>
+        <h2>Old Age Home Registration</h2>
         <form onSubmit={handleSignUp}>
           <input
             type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
+            name="homeName"
+            placeholder="Old Age Home Name"
+            value={formData.homeName}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="text"
+            name="registrationNumber"
+            placeholder="Registration Number"
+            value={formData.registrationNumber}
+            onChange={handleInputChange}
+            required
+          />
+          <textarea
+            name="address"
+            placeholder="Address"
+            value={formData.address}
+            onChange={handleInputChange}
+            required
+            rows="3"
+          />
+          <input
+            type="tel"
+            name="contactNumber"
+            placeholder="Contact Number"
+            value={formData.contactNumber}
             onChange={handleInputChange}
             required
           />
           <input
             type="email"
             name="email"
-            placeholder="Enter Email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
             required
           />
           <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            value={formData.password}
+            type="text"
+            name="managementName"
+            placeholder="Management Contact Person Name"
+            value={formData.managementName}
             onChange={handleInputChange}
             required
           />
           <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={formData.confirmPassword}
+            type="tel"
+            name="managementPhone"
+            placeholder="Management Contact Phone"
+            value={formData.managementPhone}
             onChange={handleInputChange}
             required
           />
           <input
-            type="date"
-            name="dob"
-            placeholder="Date of Birth"
-            value={formData.dob}
+            type="number"
+            name="capacity"
+            placeholder="Capacity (Number of Residents)"
+            value={formData.capacity}
             onChange={handleInputChange}
             required
           />
-          <select
-            name="gender"
-            value={formData.gender}
+          <textarea
+            name="services"
+            placeholder="Services Provided (e.g., Medical, Recreational, etc.)"
+            value={formData.services}
             onChange={handleInputChange}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
+            rows="3"
+            required
+          />
+
           <div className={styles.agreement}>
             <input
               type="checkbox"
@@ -93,7 +120,7 @@ function SignUp() {
             <label htmlFor="agreed">I agree to the Terms and Conditions</label>
           </div>
           <button type="submit" className={styles.btnn}>
-            Sign Up
+            Register Old Age Home
           </button>
         </form>
         <p className={styles.link}>
