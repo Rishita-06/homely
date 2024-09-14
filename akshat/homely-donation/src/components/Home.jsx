@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Logo from "../assets/logo.png";
 import Donation from "./Donation"
+import NewLogo from "../assets/logo.jpg";
+import About from '../assets/about.jpg';
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -51,23 +53,9 @@ function Home() {
       </nav>
 
       <div className={styles.container}>
-        <section className={styles.about}>
-          <div className={styles.aboutText}>
-            <p>
-              Homely is dedicated to providing a warm and caring environment for
-              the elderly. We believe in offering the best care possible, along
-              with opportunities for visits and donations to support our homes.
-            </p>
-            <p>
-              Our objectives include enhancing the quality of life for our
-              residents, ensuring their well-being, and fostering a community
-              where they feel loved and cared for.
-            </p>
-          </div>
-          <div className={styles.aboutLogo}>
-            <img src={Logo} alt="Homely Logo" />
-          </div>
-        </section>
+        <div className={styles.about}>
+            <img src={About} className={styles.aboutimg}/>
+        </div>
 
         <section className={styles.donations}>
           <Donation/>
