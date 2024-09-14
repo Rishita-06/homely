@@ -43,9 +43,41 @@ h1 {
 }
 
 .navLink:hover {
-  background-color: #567df4;
-  color: #fff;
-}
+    color: #3b588a;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdownContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    border-radius: 5px;
+  }
+  
+  .dropdownContent a {
+    display: block;
+    padding: 10px 16px;
+    color: #1a2b49;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdownContent a:hover {
+    background-color: #f0f4f8;
+    color: #3b588a;
+  }
+  
+  .dropdown:hover .dropdownContent {
+    display: block;
+  }
 
 .container {
   width: 100vw;

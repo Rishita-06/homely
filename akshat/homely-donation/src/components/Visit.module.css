@@ -43,20 +43,54 @@ h1 {
 }
 
 .navLink:hover {
-  background-color: #567df4;
-  color: #fff;
+  color: #3b588a;
 }
 
-.title {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2rem;
-  }
+.dropdown {
+  position: relative;
+  width: 150px;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  border-radius: 5px;
+}
+
+.dropdownContent a {
+  display: block;
+  width: 115px;
+  padding: 10px 16px;
+  color: #1a2b49;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdownContent a:hover {
+  background-color: #f0f4f8;
+  color: #3b588a;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropbtn{
+  background-color: white;
+}
   
   .formContainer {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 100px;
+    
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
@@ -101,6 +135,6 @@ h1 {
   }
   
   .button:hover {
-    background-color: #218838;
+    background-color: #1a2b49;
   }
   

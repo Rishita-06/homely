@@ -33,11 +33,16 @@ function Visit() {
     <>
       <nav className={styles.navbar}>
         <div className={styles.navLeft}>
-          <h1>Homely</h1>
+        <Link to="/home" className={styles.navLink}>
+            <h1>Homely</h1>
+          </Link>
         </div>
         <div className={styles.navRight}>
-          <Link to="/contact" className={styles.navLink}>
-            Contact Us
+        <Link to="/home" className={styles.navLink}>
+            Home
+          </Link>
+          <Link to="/marketplace" className={styles.navLink}>
+            Marketplace
           </Link>
           <Link to="/visit" className={styles.navLink}>
             Request a Visit
@@ -51,11 +56,20 @@ function Visit() {
               Register
             </Link>
           )}
+          <div className={styles.dropdown}>
+            <button className={`${styles.navLink} ${styles.dropbtn}`}>
+              Contact Us
+            </button>
+            <div className={styles.dropdownContent}>
+              <a href="tel:+916391486005">Call Us</a>
+              <a href="mailto:akshat@homely.com">Email Us</a>
+            </div>
+          </div>
         </div>
       </nav>
 
       <div className={styles.formContainer}>
-        <h2>Contact Us</h2>
+        <h2>Request a visit</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label className={styles.label}>Name:</label>
           <input
