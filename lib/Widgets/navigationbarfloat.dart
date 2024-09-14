@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:homely/Profilepage.dart';
 import 'package:homely/addpage.dart';
+import 'package:homely/profilepagehe.dart';
 //import 'package:homely/controller/bottomnavcontroller.dart';
 import 'package:homely/config/colors.dart';
 import 'package:homely/config/theme.dart';
 import 'package:homely/dashboard.dart';
+import 'package:homely/remainderapp/todo_list.dart';
+import 'package:homely/reminder.dart';
+//import 'package:homely/remainderapp/task_screen.dart';
 import 'package:homely/searchpage.dart';
-import 'package:homely/todolist.dart';
+import 'package:homely/todo.dart';
+//import 'package:homely/todolist.dart';
+//import 'package:homely/todolist/screens/homepage.dart';
 //import 'package:newskaapp/Controller/BottomNavigationController.dart';
 
 //devswip
@@ -26,9 +31,10 @@ class _BottomNavigationBarExampleState
 
   List<Widget> pages = [
     Dashboard(),
+    //TaskScreen(),
     Searchpage(),
     Profilepage(),
-    Todolist(),
+    ReminderApp(),
     Addpage(),
   ];
 

@@ -4,6 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 //import 'package:homely/controller/bottomnavcontroller.dart';
 import 'package:homely/controller/homepagecontroller.dart';
 import 'package:homely/dashboard.dart';
+//import 'package:homely/remainderapp/task_screen.dart';
+import 'package:homely/remainderapp/todo_list.dart';
 
 void main() => runApp(const Homely());
 
