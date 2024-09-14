@@ -1,9 +1,11 @@
+// dashboard.dart
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:homely/reminder.dart';
+import 'package:homely/remainderapp/remdash.dart';
 import 'package:homely/reusable_card.dart';
 import 'package:homely/icon_content.dart';
 import 'package:homely/card_content.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:homely/reminder.dart'; // Import the reminder list
 import 'package:homely/searchpage.dart';
 
 class Dashboard extends StatefulWidget {
@@ -59,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 ReusableCard(
                   onPress: () {
-                    setState(() {});
+                    setState(() {}); // Action on Resident Requests
                   },
                   colour: const Color(0xFFec6a58),
                   height: 80.0,
@@ -78,7 +80,7 @@ class _DashboardState extends State<Dashboard> {
               children: [
                 ReusableCard(
                   onPress: () {
-                    setState(() {});
+                    setState(() {}); // Action on Donations Received
                   },
                   height: 150.0,
                   width: 150.0,
@@ -93,7 +95,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 ReusableCard(
                   onPress: () {
-                    setState(() {});
+                    setState(() {}); // Action on Family Visit Requests
                   },
                   height: 150.0,
                   width: 150.0,
@@ -114,10 +116,12 @@ class _DashboardState extends State<Dashboard> {
                   Expanded(
                     child: ReusableCard(
                       onPress: () {
-                        setState(() {});
+                        setState(() {}); // Action for Reminder List
                       },
                       colour: Colors.white,
-                      cardChild: const Reminder(),
+                      cardChild: const Expanded(
+                        child: ReminderList(), // Show the top 5 reminders here
+                      ),
                     ),
                   ),
                 ],
