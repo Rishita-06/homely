@@ -45,7 +45,7 @@ function Login() {
           <p className={styles.link}>
             Dont have an account
             <br />
-            <a href="#">Sign up</a> here
+            <a href="/signup">Sign up</a> here
           </p>
           <p className={styles.liw}>Log in with</p>
           <div className={styles.icons}>
