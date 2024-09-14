@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import Home from "./components/Home";
 import Visit from "./components/Visit";
 import SignUp from "./components/SignUp";
 import Donation from "./components/Donation";
-import Dashboard from "./components/Dashboard";
+import Marketplace from "./components/Marketplace";
 
 function App() {
   return (
@@ -16,9 +16,8 @@ function App() {
           <Route path="/donation" element={<Donation />} />
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} >
-            <Route path='admin-dashboard' element={<Dashboard />} />
-          </Route> 
+          {/* <Route path="/login" element={<Login />} > */}
+          <Route path='/marketplace' element={<Marketplace />} />
         </Routes>
       </BrowserRouter>
     </>

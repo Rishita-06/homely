@@ -29,8 +29,8 @@ function Home() {
               Logout
             </button>
           ) : (
-            <Link to="/login" className={styles.navLink}>
-              Login
+            <Link to="/signup" className={styles.navLink}>
+              Register
             </Link>
           )}
         </div>
