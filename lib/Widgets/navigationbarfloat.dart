@@ -33,7 +33,7 @@ class _BottomNavigationBarExampleState
     Dashboard(),
     //TaskScreen(),
     Searchpage(),
-    Profilepage(),
+    Profilepagehe(),
     ReminderApp(),
     Addpage(),
   ];

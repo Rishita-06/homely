@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homely/model_page.dart';
 import 'package:homely/search_card.dart';
 
 class Searchpage extends StatefulWidget {
@@ -53,6 +54,27 @@ class _SearchpageState extends State<Searchpage> {
               children: [
                 SearchCard(
                   ontap: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ModelPage(
+                            ontap: () {},
+                            disease: 'Diabetes',
+                            name: 'Amit',
+                            age: '',
+                            id: '102319076',
+                            room: '210',
+                            food: 'Vegeterian\nLactose Intolerant',
+                            home: 'Pune\nMaharashtra',
+                            care: 'Rajesh',
+                            date: '21-09-2022',
+                            contact: '9711239472',
+                            activity: 'Pottery,Gardening',
+                          ),
+                        ),
+                      );
+                    });
                     // Define action on tap here
                   },
                   name: 'Amit',

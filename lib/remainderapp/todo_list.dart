@@ -99,9 +99,12 @@ class _ReminderAppState extends State<ReminderApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reminders',
-            style: TextStyle(
-                color: Color(0xFF1A2B49), fontWeight: FontWeight.bold)),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 40.0),
+          child: Text('Reminders',
+              style: TextStyle(
+                  color: Color(0xFF1A2B49), fontWeight: FontWeight.bold)),
+        ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: Padding(
