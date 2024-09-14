@@ -6,10 +6,13 @@ import 'package:homely/profilepagehe.dart';
 import 'package:homely/config/colors.dart';
 import 'package:homely/config/theme.dart';
 import 'package:homely/dashboard.dart';
+import 'package:homely/remainderapp/todo_list.dart';
+import 'package:homely/reminder.dart';
+//import 'package:homely/remainderapp/task_screen.dart';
 import 'package:homely/searchpage.dart';
 import 'package:homely/todo.dart';
-import 'package:homely/todolist.dart';
-import 'package:homely/todolist/screens/homepage.dart';
+//import 'package:homely/todolist.dart';
+//import 'package:homely/todolist/screens/homepage.dart';
 //import 'package:newskaapp/Controller/BottomNavigationController.dart';
 
 //devswip
@@ -27,10 +30,11 @@ class _BottomNavigationBarExampleState
   int _selectedIndex = 0;
 
   List<Widget> pages = [
-    // Dashboard()
+    Dashboard(),
+    //TaskScreen(),
     Searchpage(),
     Profilepage(),
-    Todo(),
+    ReminderApp(),
     Addpage(),
   ];
 

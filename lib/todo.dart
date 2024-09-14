@@ -1,6 +1,10 @@
-class Todo {
-  Todo({required this.title, this.isDone = false});
+import 'package:flutter/material.dart';
 
-  String title;
-  bool isDone;
+class Todo extends StatelessWidget {
+  const Todo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
 }
