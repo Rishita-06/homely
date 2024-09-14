@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:homely/reusable_card.dart';
 import 'package:homely/icon_content.dart';
+import 'package:homely/card_content.dart';
+import 'package:flutter/cupertino.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -62,29 +64,34 @@ class _DashboardState extends State<Dashboard> {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(() {});
-                    },
-                    colour: const Color(0xFF30b79c),
-                    height: 80.0,
-                    width: 50.0,
-                    cardChild: const IconContent(
-                      label: 'Total Residents',
-                      color: Colors.white,
-                      icon: Icons.circle_rounded,
-                    ),
+                ReusableCard(
+                  onPress: () {
+                    setState(() {});
+                  },
+                  colour: const Color(0xFF30b79c),
+                  height: 80.0,
+                  width: 150.0,
+                  cardChild: const IconContent(
+                    cc: Color(0xFF30b79c),
+                    content: '240',
+                    label: 'Total Residents',
+                    color: Colors.white,
+                    icon: Icons.circle_rounded,
                   ),
                 ),
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(() {});
-                    },
-                    colour: const Color(0xFFec6a58),
-                    height: 80.0,
-                    width: 50.0,
+                ReusableCard(
+                  onPress: () {
+                    setState(() {});
+                  },
+                  colour: const Color(0xFFec6a58),
+                  height: 80.0,
+                  width: 150.0,
+                  cardChild: const IconContent(
+                    cc: Color(0xFFec6a58),
+                    content: '101',
+                    label: 'Resident Requests',
+                    color: Colors.white,
+                    icon: Icons.circle_rounded,
                   ),
                 ),
               ],
@@ -99,6 +106,13 @@ class _DashboardState extends State<Dashboard> {
                       setState(() {});
                     },
                     colour: Colors.white,
+                    cardChild: const CardContent(
+                      icon: Icons.wallet,
+                      label: 'Donations Received',
+                      content: 'Rs 73000/-',
+                      color: Colors.black,
+                      c: Colors.orange,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -107,6 +121,13 @@ class _DashboardState extends State<Dashboard> {
                       setState(() {});
                     },
                     colour: Colors.white,
+                    cardChild: const CardContent(
+                      icon: CupertinoIcons.eye,
+                      color: Colors.blue,
+                      label: 'Family Visit Requests',
+                      content: '12',
+                      c: Colors.orange,
+                    ),
                   ),
                 ),
               ],

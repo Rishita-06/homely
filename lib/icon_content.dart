@@ -4,8 +4,20 @@ class IconContent extends StatelessWidget {
   final IconData? icon;
   final String? label;
   final Color? color;
+  final Color? cc;
+  final String? content;
+  final double? t;
+  final double? l;
 
-  const IconContent({super.key, this.icon, this.label, this.color});
+  const IconContent(
+      {super.key,
+      this.icon,
+      this.label,
+      this.color,
+      this.cc,
+      this.content,
+      this.t,
+      this.l});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +27,10 @@ class IconContent extends StatelessWidget {
           width: 15.0,
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 15.0, top: 20.0),
+          padding: const EdgeInsets.only(
+            right: 5.0,
+            top: 20.0,
+          ),
           child: Text(
             label ?? '',
             style: TextStyle(
@@ -46,9 +61,9 @@ class IconContent extends StatelessWidget {
                     left: 6.0,
                   ),
                   child: Text(
-                    '240',
+                    content ?? '',
                     style: TextStyle(
-                      color: color,
+                      color: cc,
                       fontSize: 10.0,
                     ),
                   ),
