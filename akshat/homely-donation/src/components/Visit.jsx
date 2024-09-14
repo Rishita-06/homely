@@ -1,7 +1,15 @@
 import { useState } from 'react';
-import styles from './Visit.module.css'; // Assuming you're using CSS Modules for styling
+import { Link } from "react-router-dom";
+import styles from './Visit.module.css';
 
 function Visit() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,7 +31,28 @@ function Visit() {
 
   return (
     <>
-      <h1 className={styles.title}>Visit</h1>
+      <nav className={styles.navbar}>
+        <div className={styles.navLeft}>
+          <h1>Homely</h1>
+        </div>
+        <div className={styles.navRight}>
+          <Link to="/contact" className={styles.navLink}>
+            Contact Us
+          </Link>
+          <Link to="/visit" className={styles.navLink}>
+            Request a Visit
+          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className={styles.navLink}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/signup" className={styles.navLink}>
+              Register
+            </Link>
+          )}
+        </div>
+      </nav>
 
       <div className={styles.formContainer}>
         <h2>Contact Us</h2>
