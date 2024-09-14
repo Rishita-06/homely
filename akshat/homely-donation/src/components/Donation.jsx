@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import Razorpay from 'razorpay';
 import styles from './Donation.module.css';
 
