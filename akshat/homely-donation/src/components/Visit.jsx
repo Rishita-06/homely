@@ -1,93 +1,86 @@
-import { useState } from 'react';
-import { Link } from "react-router-dom";
 import styles from './Visit.module.css';
 
 function Visit() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form data submitted:', formData);
-  };
-
   return (
     <>
-      <nav className={styles.navbar}>
-        <div className={styles.navLeft}>
-          <h1>Homely</h1>
-        </div>
-        <div className={styles.navRight}>
-          <Link to="/contact" className={styles.navLink}>
-            Contact Us
-          </Link>
-          <Link to="/visit" className={styles.navLink}>
-            Request a Visit
-          </Link>
-          {isLoggedIn ? (
-            <button onClick={handleLogout} className={styles.navLink}>
-              Logout
-            </button>
-          ) : (
-            <Link to="/signup" className={styles.navLink}>
-              Register
-            </Link>
-          )}
-        </div>
-      </nav>
-
+    
       <div className={styles.formContainer}>
-        <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <label className={styles.label}>Name:</label>
+        <h2>Request a visit to the Old Age Home</h2>
+        <form action="/submit_visit_request" method="post" className={styles.form}>
+          
+          <label className={styles.label} htmlFor="visitorName">Your Name:</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            id="visitorName"
+            name="visitorName"
             className={styles.input}
             required
           />
 
-          <label className={styles.label}>Email:</label>
+          <label className={styles.label} htmlFor="visitorEmail">Your Email:</label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            id="visitorEmail"
+            name="visitorEmail"
             className={styles.input}
             required
           />
 
-          <label className={styles.label}>Message:</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className={styles.textarea}
+          <label className={styles.label} htmlFor="visitorPhone">Your Phone:</label>
+          <input
+            type="tel"
+            id="visitorPhone"
+            name="visitorPhone"
+            className={styles.input}
             required
+          />
+
+          <label className={styles.label} htmlFor="residentName">Resident's Name:</label>
+          <input
+            type="text"
+            id="residentName"
+            name="residentName"
+            className={styles.input}
+            required
+          />
+
+          <label className={styles.label} htmlFor="relationship">Your Relationship to Resident:</label>
+          <input
+            type="text"
+            id="relationship"
+            name="relationship"
+            className={styles.input}
+            required
+          />
+
+          <label className={styles.label} htmlFor="visitDate">Preferred Visit Date:</label>
+          <input
+            type="date"
+            id="visitDate"
+            name="visitDate"
+            className={styles.input}
+            required
+          />
+
+          <label className={styles.label} htmlFor="visitTime">Preferred Visit Time:</label>
+          <input
+            type="time"
+            id="visitTime"
+            name="visitTime"
+            className={styles.input}
+            required
+          />
+
+          <label className={styles.label} htmlFor="notes">Any Special Requests or Notes:</label>
+          <textarea
+            id="notes"
+            name="notes"
+            className={styles.textarea}
+            placeholder="If you have any specific requests, please let us know."
           ></textarea>
 
           <button type="submit" className={styles.button}>
-            Submit
+            Submit Request
           </button>
         </form>
       </div>
@@ -96,4 +89,3 @@ function Visit() {
 }
 
 export default Visit;
-
