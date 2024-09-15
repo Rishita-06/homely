@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import Logo from "../assets/logo.png";
 import Donation from "./Donation"
-import NewLogo from "../assets/logo.jpg";
 import About from '../assets/about.jpg';
 
 function Home() {
@@ -18,7 +16,7 @@ function Home() {
       <nav className={styles.navbar}>
         <div className={styles.navLeft}>
           <Link to="/home" className={styles.navLink}>
-            <h1>Homely</h1>
+            <h1 className="text-4xl font-bold text-center my-4" >Homely</h1>
           </Link>
         </div>
         <div className={styles.navRight}>

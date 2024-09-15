@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchCard extends StatelessWidget {
-  const SearchCard({
+class CaretakerCard extends StatelessWidget {
+  const CaretakerCard({
     super.key,
     required this.ontap,
     required this.disease,
@@ -23,8 +23,7 @@ class SearchCard extends StatelessWidget {
         ),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: const Color(0xFFe4f7ff),
-            borderRadius: BorderRadius.circular(30)),
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +32,7 @@ class SearchCard extends StatelessWidget {
                 width: 120,
                 height: 120,
                 decoration: BoxDecoration(
-                    color: const Color(0xFFe4f7ff),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Expanded(
                   child: Column(

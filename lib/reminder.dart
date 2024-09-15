@@ -13,17 +13,19 @@ class Reminder extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
-            top: 10.0,
-            left: 10.0,
-          ),
-          child: Text(
-            'Reminders',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30.0,
-              color: Colors.black,
+        const SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 10.0,
+              left: 10.0,
+            ),
+            child: Text(
+              'Reminders',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30.0,
+                color: Colors.black,
+              ),
             ),
           ),
         ),

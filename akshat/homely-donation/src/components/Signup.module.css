@@ -5,6 +5,91 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.navbar {
+  width: 98.9vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navLeft {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #1a2b49;
+  font-weight: bold;
+}
+
+.navRight {
+  display: flex;
+  gap: 30px;
+  padding-right: 30px;
+}
+
+.navLink {
+  color: #1a2b49;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: #567df4;
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+  width: 150px;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  border-radius: 5px;
+}
+
+.dropdownContent a {
+  display: block;
+  width: 115px;
+  padding: 10px 16px;
+  color: #1a2b49;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdownContent a:hover {
+  background-color: #f0f4f8;
+  color: #3b588a;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropbtn{
+  background-color: white;
+}
+
+
 .container {
   background: #ffffff;
   color: #fff;

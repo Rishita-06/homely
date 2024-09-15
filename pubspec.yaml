@@ -44,9 +44,12 @@ dependencies:
   shared_preferences: ^2.3.2
   provider: ^6.1.2
   intl: ^0.19.0
+<<<<<<< HEAD
   # firebase_core: ^3.4.1
   firebase_auth: ^5.2.1
   # cloud_firestore: ^5.4.1
+=======
+>>>>>>> c4b3496acd4cc411003a9957f24ee941ee770d31
 
 dev_dependencies:
   flutter_test:

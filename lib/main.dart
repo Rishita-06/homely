@@ -4,13 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:homely/controller/homepagecontroller.dart';
 import 'package:homely/da24login.dart';
-import 'package:homely/firebase_options.dart';
+// import 'package:homely/firebase_options.dart';
 import 'package:homely/requestlistscreen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
   runApp(const Homely());
 }
 
