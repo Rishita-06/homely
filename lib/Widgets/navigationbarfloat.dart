@@ -10,7 +10,7 @@ import 'package:homely/remainderapp/todo_list.dart';
 import 'package:homely/reminder.dart';
 //import 'package:homely/remainderapp/task_screen.dart';
 import 'package:homely/searchpage.dart';
-import 'package:homely/todo.dart';
+//import 'package:homely/todo.dart';
 //import 'package:homely/todolist.dart';
 //import 'package:homely/todolist/screens/homepage.dart';
 //import 'package:newskaapp/Controller/BottomNavigationController.dart';
@@ -33,9 +33,9 @@ class _BottomNavigationBarExampleState
     Dashboard(),
     //TaskScreen(),
     Searchpage(),
-    Profilepage(),
-    ReminderApp(),
     Addpage(),
+    ReminderApp(),
+    Profilepage(),
   ];
 
   void _onItemTapped(int index) {
