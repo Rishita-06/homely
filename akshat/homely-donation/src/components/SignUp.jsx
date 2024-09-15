@@ -3,6 +3,9 @@ import styles from "./SignUp.module.css";
 import "remixicon/fonts/remixicon.css";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
+
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -17,6 +20,8 @@ function SignUp() {
     services: "",
     agreed: false,
   });
+
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
     const handleLogout = () => {
@@ -32,10 +37,31 @@ function SignUp() {
     }));
   };
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      // Add form data to Firestore
+      const docRef = await addDoc(collection(db, "oldAgeHomes"), formData);
+      console.log("Document written with ID: ", docRef.id);
+      alert('Registration successful!');
+      setFormData({
+        homeName: "",
+        registrationNumber: "",
+        address: "",
+        contactNumber: "",
+        email: "",
+        managementName: "",
+        managementPhone: "",
+        capacity: "",
+        services: "",
+        agreed: false,
+      }); // Reset form
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert('Error during registration. Please try again.');
+    }
   };
+
 
   return (
     <>
@@ -152,7 +178,6 @@ function SignUp() {
             rows="3"
             required
           />
-
           <div className={styles.agreement}>
             <input
               type="checkbox"
@@ -167,11 +192,6 @@ function SignUp() {
             Register Old Age Home
           </button>
         </form>
-        <p className={styles.link}>
-          Already have an account?
-          <br />
-          <a href="/">Login</a> here
-        </p>
       </div>
     </div></>
   );

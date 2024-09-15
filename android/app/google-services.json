@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "919524899349",
+    "project_id": "home-less-hore",
+    "storage_bucket": "home-less-hore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919524899349:android:947b3739ef28113a1bec1c",
+        "android_client_info": {
+          "package_name": "com.exampl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0SCwUX1PK5QersalmcjSDWT0LmFch6JM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
