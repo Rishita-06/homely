@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import Logo from "../assets/logo.png";
 import Donation from "./Donation"
-import NewLogo from "../assets/logo.jpg";
 import About from '../assets/about.jpg';
 
 function Home() {
