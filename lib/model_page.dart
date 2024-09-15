@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:homely/searchpage.dart';
 
 class ModelPage extends StatelessWidget {
   const ModelPage({
@@ -46,17 +47,27 @@ class ModelPage extends StatelessWidget {
                     onTap: () {
                       Get.back();
                     },
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 100),
-                        Icon(
-                          Icons.arrow_back,
-                          size: 24,
-                          color: Color.fromRGBO(0, 0, 0, 1),
+                        const SizedBox(height: 100),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Searchpage(),
+                              ),
+                            );
+                          },
+                          child: const Icon(
+                            Icons.arrow_back,
+                            size: 24,
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                          ),
                         ),
-                        SizedBox(width: 80),
-                        Padding(
+                        const SizedBox(width: 80),
+                        const Padding(
                           padding: EdgeInsets.only(left: 30.0),
                           child: Text(
                             "Homely",

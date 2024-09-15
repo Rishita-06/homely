@@ -22,7 +22,7 @@ a {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 44px;
   color: #1a2b49;
   font-weight: bold;
 }
@@ -101,31 +101,15 @@ h1 {
   align-items: center;
   background-color: #fff;
   border-radius: 15px;
-  padding: 50px;
+  /* padding: 50px; */
   margin-bottom: 50px;
   width: 100vw;
+  height: 80vh;
 }
 
-.aboutText {
-  text-align: left;
-}
-
-.aboutText h2 {
-  font-size: 36px;
-  color: #1a2b49;
-  margin-bottom: 20px;
-}
-
-.aboutText p {
-  margin-top: 40px;
-  font-size: 20px;
-  color: #555;
-  line-height: 1.8;
-}
-
-.aboutLogo img {
-  width: 400px;
-  border-radius: 10px;
+.aboutimg{
+  width: 100vw;
+  padding-left: 20px;
 }
 
 .donations {
