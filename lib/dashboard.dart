@@ -1,7 +1,9 @@
 // dashboard.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:homely/remainderapp/remdash.dart';
+import 'package:homely/requestlistscreen.dart';
 import 'package:homely/reusable_card.dart';
 import 'package:homely/icon_content.dart';
 import 'package:homely/card_content.dart';
@@ -61,7 +63,11 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 ReusableCard(
                   onPress: () {
-                    setState(() {}); // Action on Resident Requests
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                RequestListScreen())); // Action on Resident Requests
                   },
                   colour: const Color(0xFFec6a58),
                   height: 80.0,

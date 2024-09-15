@@ -1,14 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-//import 'package:homely/controller/bottomnavcontroller.dart';
 import 'package:homely/controller/homepagecontroller.dart';
 import 'package:homely/da24login.dart';
-import 'package:homely/dashboard.dart';
 import 'package:homely/firebase_options.dart';
-//import 'package:homely/remainderapp/task_screen.dart';
-import 'package:homely/remainderapp/todo_list.dart';
+import 'package:homely/requestlistscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,16 +15,51 @@ void main() async {
 }
 
 class Homely extends StatelessWidget {
-  const Homely({super.key});
+  const Homely({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-          primaryColor: Colors.lightBlue,
-          scaffoldBackgroundColor: Colors.white),
-      //home: Homepagecontroller(),
-      home: Day24Authentication(),
+    return FutureBuilder(
+      // Check the authentication state asynchronously
+      future: FirebaseAuth.instance.authStateChanges().first,
+      builder: (context, AsyncSnapshot<User?> snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Show a loading indicator while waiting for Firebase Authentication
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
+          );
+        } else {
+          // Determine which screen to show based on the authentication state
+          if (snapshot.hasData && snapshot.data != null) {
+            // User is authenticated, show Homepagecontroller
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData.dark().copyWith(
+                primaryColor: Colors.lightBlue,
+                scaffoldBackgroundColor: Colors.white,
+              ),
+              home: Homepagecontroller(),
+            );
+          } else {
+            // User is not authenticated, show constDay24Authentication
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData.dark().copyWith(
+                primaryColor: Colors.lightBlue,
+                scaffoldBackgroundColor: Colors.white,
+              ),
+              home: Day24Authentication(),
+              //home: RequestListScreen()
+              //home: Homepagecontroller(),
+            );
+          }
+        }
+      },
     );
   }
 }
