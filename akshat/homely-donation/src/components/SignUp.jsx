@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./SignUp.module.css";
 import "remixicon/fonts/remixicon.css";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,12 @@ function SignUp() {
     services: "",
     agreed: false,
   });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+    const handleLogout = () => {
+      setIsLoggedIn(false);
+    };
+  
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,6 +38,43 @@ function SignUp() {
   };
 
   return (
+    <>
+     <nav className={styles.navbar}>
+        <div className={styles.navLeft}>
+          <Link to="/home" className={styles.navLink}>
+            <h1 className="text-4xl font-bold text-center my-4" >Homely</h1>
+          </Link>
+        </div>
+        <div className={styles.navRight}>
+          <Link to="/home" className={styles.navLink}>
+            Home
+          </Link>
+          <Link to="/marketplace" className={styles.navLink}>
+            Marketplace
+          </Link>
+          <Link to="/visit" className={styles.navLink}>
+            Request a Visit
+          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className={styles.navLink}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/signup" className={styles.navLink}>
+              Register
+            </Link>
+          )}
+          <div className={styles.dropdown}>
+            <button className={`${styles.navLink} ${styles.dropbtn}`}>
+              Contact Us
+            </button>
+            <div className={styles.dropdownContent}>
+              <a href="tel:+916391486005">Call Us</a>
+              <a href="mailto:akshat@homely.com">Email Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
     <div className={styles.container}>
       <div className={styles.form}>
         <img src={Logo} alt="Homely Logo" className={styles.img} />
@@ -129,7 +173,7 @@ function SignUp() {
           <a href="/">Login</a> here
         </p>
       </div>
-    </div>
+    </div></>
   );
 }
 

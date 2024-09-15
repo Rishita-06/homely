@@ -3,7 +3,7 @@ a {
 }
 
 .navbar {
-  width: 100vw;
+  width: 98.9vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +103,7 @@ h1 {
   border-radius: 15px;
   /* padding: 50px; */
   margin-bottom: 50px;
-  width: 100vw;
+  width: 98.9vw;
   height: 80vh;
 }
 
@@ -113,5 +113,5 @@ h1 {
 }
 
 .donations {
-  width: 100vw;
+  width: 98.9vw;
 }
