@@ -151,8 +151,8 @@ function Donation() {
 
   return (
     <div className={styles.donationContainer}>
-      <h1 className={styles.donate} >Support Our Old Age Homes</h1>
-      <p>Your donation makes a difference. Find a home and contribute to their well-being.</p>
+      <h1 className="text-4xl font-bold text-center my-4" >Support Our Old Age Homes</h1>
+      <p className="text-2xl font-bold text-center my-4">Your donation makes a difference. Find a home and contribute to their well-being.</p>
 
       <div className={styles.filterSection}>
         <input

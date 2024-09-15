@@ -10,12 +10,12 @@ const items = [
       price: 350,
       description: 'Elegant brass diya with intricate designs, crafted by Aarti, 65, for festive occasions.',
       longDescription: 'This beautiful brass diya showcases Aarti\'s expertise in traditional metalwork. Each diya is handcrafted with intricate patterns, making it a perfect addition to your Diwali celebrations.',
-      imageUrl: '/api/placeholder/400/300',
+      imageUrl: 'https://www.suyogah.com/cdn/shop/products/KRS_1693.jpg?v=1678780518&width=990',
       category: 'Home Decor',
       artisan: {
         name: 'Aarti Sharma',
         age: 65,
-        avatar: '/api/placeholder/100/100',
+        avatar: 'https://www.creativehatti.com/wp-content/uploads/edd/2021/12/Indian-Marathi-woman-is-holding-a-brass-aarti-lamp-in-hands-4-large.jpg',
         story: 'Aarti has been creating traditional brassware for over 40 years. Her work is a blend of artistry and tradition, reflecting the rich heritage of Indian metalcraft.',
       },
     },
@@ -25,12 +25,12 @@ const items = [
       price: 2500,
       description: 'Luxurious woolen shawl with intricate Kashmiri embroidery by Ghulam, 70.',
       longDescription: 'Ghulam’s shawls are famous for their exquisite Kashmiri embroidery, a tradition passed down through generations. Each shawl is a work of art, perfect for adding elegance and warmth.',
-      imageUrl: '/api/placeholder/400/300',
+      imageUrl: 'https://d13676iop780hb.cloudfront.net/uploads/2022/10/kcs-422-hb-2-1.jpg',
       category: 'Textiles',
       artisan: {
         name: 'Ghulam Ahmed',
         age: 70,
-        avatar: '/api/placeholder/100/100',
+        avatar: 'https://d13676iop780hb.cloudfront.net/uploads/2022/10/kcs-422-hb-2-1.jpg',
         story: 'A master craftsman from Kashmir, Ghulam combines traditional techniques with his own creative touch to produce shawls that are both beautiful and warm.',
       },
     },
@@ -40,12 +40,12 @@ const items = [
       price: 1200,
       description: 'Colorful necklace with traditional beadwork by Meera, 55, inspired by Rajasthani designs.',
       longDescription: 'Meera’s beaded jewelry is inspired by the vibrant colors and patterns of Rajasthan. Each piece is handcrafted with care, making it a unique addition to your jewelry collection.',
-      imageUrl: '/api/placeholder/400/300',
+      imageUrl: 'https://images-cdn.ubuy.co.in/6669ddc2b536bd39f43027f4-tewiky-silver-necklace-for-women-dainty.jpg',
       category: 'Jewelry',
       artisan: {
         name: 'Meera Patel',
         age: 55,
-        avatar: '/api/placeholder/100/100',
+        avatar: 'https://images.cltstatic.com/media/product/350/AL00343-SS0000-rainbow-mist-pendant-necklace-in-rose-gold-plated--silver-prd-6-pd.jpg',
         story: 'Meera learned the art of beading from her grandmother. Her jewelry reflects the rich cultural heritage of Rajasthan and is celebrated for its intricate designs and craftsmanship.',
       },
     },
@@ -55,12 +55,12 @@ const items = [
       price: 1800,
       description: 'Beautiful Madhubani painting by Sita, 68, capturing the essence of Indian folk art.',
       longDescription: 'Sita’s Madhubani paintings are renowned for their vibrant colors and intricate details. Each artwork tells a story and brings the rich tradition of Indian folk art to your home.',
-      imageUrl: '/api/placeholder/400/300',
+      imageUrl: 'https://5.imimg.com/data5/SELLER/Default/2022/5/SN/PQ/MI/152570923/madhubani-painting-1000x1000.jpg',
       category: 'Art',
       artisan: {
         name: 'Sita Devi',
         age: 68,
-        avatar: '/api/placeholder/100/100',
+        avatar: 'https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2021/04/16/929980-dipika-sita.jpg?im=Resize=(700,400)',
         story: 'Sita is a master of Madhubani art, a tradition from Bihar. Her paintings are celebrated for their detailed patterns and vibrant colors, preserving a cultural heritage through her art.',
       },
     },
@@ -70,12 +70,12 @@ const items = [
       price: 150,
       description: 'Natural soap made with Ayurvedic herbs by Anju, 60, for healthy and glowing skin.',
       longDescription: 'Anju’s Ayurvedic soaps are crafted with organic ingredients and traditional herbs. Each soap is designed to nourish and rejuvenate your skin, reflecting the wisdom of ancient Ayurvedic practices.',
-      imageUrl: '/api/placeholder/400/300',
+      imageUrl: 'https://5.imimg.com/data5/YB/YA/SZ/SELLER-78443778/home-made-organic-soap-for-bight-skin-texture--1000x1000.jpg',
       category: 'Bath & Body',
       artisan: {
         name: 'Anju Verma',
         age: 60,
-        avatar: '/api/placeholder/100/100',
+        avatar: 'https://images.tribuneindia.com/cms/gall_content/2015/4/2015_4$largeimg08_Apr_2015_223914890.jpg',
         story: 'Anju, with her background in Ayurvedic medicine, creates natural soaps that blend traditional knowledge with modern care. Her products are loved for their purity and effectiveness.',
       },
     },
@@ -87,7 +87,7 @@ function Marketplace() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [favorites, setFavorites] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+   
     const handleLogout = () => {
       setIsLoggedIn(false);
     };
@@ -124,7 +124,7 @@ function Marketplace() {
         <nav className={styles.navbar}>
           <div className={styles.navLeft}>
             <Link to="/home" className={styles.navLink}>
-              <h1>Homely</h1>
+              <h1 className="text-4xl font-bold text-center my-4">Homely</h1>
             </Link>
           </div>
           <div className={styles.navRight}>
@@ -171,7 +171,7 @@ function Marketplace() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
               <div key={item.id} className="border rounded-lg overflow-hidden shadow-md">
-                <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-cover" />
+                <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-contain" />
                 <div className="p-4">
                   <h2 className="text-xl font-semibold">{item.name}</h2>
                   <p className="text-gray-700">{item.description}</p>
@@ -218,7 +218,7 @@ function Marketplace() {
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
               <div className="bg-white p-8 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <button onClick={() => setSelectedItem(null)} className="float-right text-2xl">&times;</button>
-                <img src={selectedItem.imageUrl} alt={selectedItem.name} className="w-full h-64 object-cover mb-4 rounded" />
+                <img src={selectedItem.imageUrl} alt={selectedItem.name} className="w-full h-64 object-contain mb-4 rounded" />
                 <h2 className="text-2xl font-bold mb-2">{selectedItem.name}</h2>
                 <p className="text-xl font-semibold mb-4">${selectedItem.price}</p>
                 <p className="mb-4">{selectedItem.longDescription}</p>
