@@ -1,33 +1,37 @@
 import styles from './Visit.module.css';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 function Visit() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Define the handleSubmit function
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Capture form data
-    const formData = new FormData(e.target);
+    const form = e.target;
     const visitRequest = {
-      visitorName: formData.get('visitorName'),
-      visitorEmail: formData.get('visitorEmail'),
-      visitorPhone: formData.get('visitorPhone'),
-      residentName: formData.get('residentName'),
-      relationship: formData.get('relationship'),
-      visitDate: formData.get('visitDate'),
-      visitTime: formData.get('visitTime'),
-      notes: formData.get('notes'),
+      visitorName: form.visitorName.value,
+      visitorEmail: form.visitorEmail.value,
+      visitorPhone: form.visitorPhone.value,
+      residentName: form.residentName.value,
+      relationship: form.relationship.value,
+      visit: form.visitDate.value + ' ' + form.visitTime.value,
+      notes: form.notes.value,
     };
 
-    console.log('Visit request submitted:', visitRequest);
-
-    // Add logic to handle the form data (e.g., send it to the server)
-    alert('Visit request submitted successfully!');
-    // You can clear the form if necessary
-    e.target.reset();
+    try {
+      // Add the visit request to Firestore
+      const docRef = await addDoc(collection(db, "formData"), visitRequest);
+      console.log("Document written with ID: ", docRef.id);
+      alert('Visit request submitted successfully!');
+      form.reset();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert('Error submitting visit request. Please try again.');
+    }
   };
 
   const handleLogout = () => {
@@ -77,7 +81,7 @@ function Visit() {
         <div className={styles.formContainer}>
           <h2>Request a visit</h2>
           <form onSubmit={handleSubmit} className={styles.form}>
-            <label className={styles.label}>Name:</label>
+            <label className={styles.label} htmlFor="visitorName">Name:</label>
             <input
               type="text"
               id="visitorName"
